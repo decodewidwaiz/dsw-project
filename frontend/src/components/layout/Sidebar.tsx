@@ -36,11 +36,13 @@ export const Sidebar = ({
       <AnimatePresence mode="wait">
         {isOpen && (
           <motion.aside
-            initial={{ width: 0, opacity: 0 }}
-            animate={{ width: 280, opacity: 1 }}
-            exit={{ width: 0, opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="h-full bg-sidebar border-r border-sidebar-border flex flex-col overflow-hidden"
+            initial={false}
+            animate={{
+              x: isOpen ? 0 : '-100%',
+              width: isOpen ? 280 : 0,
+            }}
+            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+            className="fixed md:relative z-30 h-[calc(100vh-4rem)] md:h-full border-r border-border bg-sidebar flex flex-col"
           >
             <div className="p-4">
               <button
@@ -110,7 +112,7 @@ export const Sidebar = ({
       <button
         onClick={onToggle}
         className={cn(
-          'absolute top-4 z-20 p-2 rounded-lg bg-card border border-border hover:bg-muted transition-all',
+          'fixed top-20 z-20 p-2 rounded-lg bg-card border border-border hover:bg-muted transition-all md:hidden',
           isOpen ? 'left-[268px]' : 'left-4'
         )}
       >

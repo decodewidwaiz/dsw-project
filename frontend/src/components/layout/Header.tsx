@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Sparkles, Moon, Sun, User } from 'lucide-react';
+import { Sparkles, Moon, Sun } from 'lucide-react';
 import { useTheme } from '@/hooks/use-theme';
 
 export const Header = () => {
@@ -18,14 +18,14 @@ export const Header = () => {
         </motion.div>
         <div>
           <h1 className="text-lg font-semibold">Padh.Ai</h1>
-          <p className="text-xs text-muted-foreground hidden sm:block">Multimodal Intelligence</p>
+          <p className="text-xs text-muted-foreground hidden md:block">Multimodal Intelligence</p>
         </div>
       </div>
 
-      <div className="flex flex-col sm:flex-row items-center gap-3">
+      <div className="flex items-center gap-2">
         <button
           onClick={toggleTheme}
-          className="p-2.5 rounded-xl hover:bg-muted transition-colors"
+          className="p-2 rounded-xl hover:bg-muted transition-colors"
           aria-label="Toggle theme"
         >
           <motion.div
@@ -41,27 +41,23 @@ export const Header = () => {
           </motion.div>
         </button>
         
-        <div className="flex flex-col sm:flex-row items-center gap-2 text-sm">
-          <div className="flex items-center gap-1">
-            <span className="text-muted-foreground">built with</span>
-            <span className="text-red-500">❤️</span>
-            <span className="text-muted-foreground">by</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <a 
-              href="https://waiz-alam.vercel.app/" 
-              className="font-medium text-primary hover:underline"
-            >
-              Waiz Alam
-            </a>
-            <span className="text-muted-foreground">&</span>
-            <a 
-              href="https://www.instagram.com/_adbulnaved_?igsh=MTAwMzk3dnYxbnhzNg==" 
-              className="font-medium text-primary hover:underline"
-            >
-              Abdul Naved
-            </a>
-          </div>
+        <div className="hidden md:flex items-center gap-2 text-sm">
+          <span className="text-muted-foreground">built with</span>
+          <span className="text-red-500">❤️</span>
+          <span className="text-muted-foreground">by</span>
+          <a 
+            href="https://waiz-alam.vercel.app/" 
+            className="font-medium text-primary hover:underline"
+          >
+            Waiz Alam
+          </a>
+          <span className="text-muted-foreground">&</span>
+          <a 
+            href="https://www.instagram.com/_adbulnaved_?igsh=MTAwMzk3dnYxbnhzNg==" 
+            className="font-medium text-primary hover:underline"
+          >
+            Abdul Naved
+          </a>
         </div>
       </div>
     </header>

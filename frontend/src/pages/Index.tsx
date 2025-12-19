@@ -31,7 +31,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="h-screen flex flex-col bg-background overflow-hidden">
+    <div className="h-[100vh] flex flex-col bg-background overflow-hidden">
       <Header />
       
       <div className="flex-1 flex relative overflow-hidden">
@@ -46,28 +46,28 @@ const Index = () => {
           onOpenSettings={() => setSettingsOpen(true)}
         />
         
-        <main className="flex-1 flex flex-col min-w-0">
-          <ChatArea
+        <main className="flex-1 flex flex-col min-w-0 h-full">
+          <ChatArea 
             messages={messages}
             isLoading={isLoading}
             onExampleClick={handleExampleClick}
           />
           
-          <InputPanel
+          <InputPanel 
             onSend={sendMessage}
             isLoading={isLoading}
             initialMessage={pendingMessage}
           />
         </main>
+        
+        <SettingsModal 
+          open={settingsOpen} 
+          onOpenChange={setSettingsOpen}
+          model={selectedModel}
+          onModelChange={setSelectedModel}
+          onClearHistory={clearAllSessions}
+        />
       </div>
-
-      <SettingsModal
-        isOpen={settingsOpen}
-        onClose={() => setSettingsOpen(false)}
-        selectedModel={selectedModel}
-        onModelChange={setSelectedModel}
-        onClearHistory={clearAllSessions}
-      />
     </div>
   );
 };

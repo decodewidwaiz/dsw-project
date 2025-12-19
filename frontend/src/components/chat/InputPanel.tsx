@@ -373,7 +373,7 @@ export const InputPanel = ({ onSend, isLoading, initialMessage }: InputPanelProp
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder={isRecording ? 'Recording...' : 'Ask anything, upload an image, or speak…'}
+            placeholder={isRecording ? 'Recording...' : 'Ask anything...'}
             rows={1}
             className="flex-1 resize-none bg-transparent border-0 focus:outline-none focus:ring-0 py-2 px-2 max-h-40 text-sm placeholder:text-muted-foreground"
             style={{ minHeight: '40px' }}
