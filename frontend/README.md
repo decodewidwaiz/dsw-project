@@ -60,9 +60,23 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+## How can I deploy this project to Vercel?
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+This project consists of two parts that need to be deployed separately:
+
+1. **Backend Deployment**:
+   - Navigate to the `backend` directory
+   - Deploy to Vercel using the Vercel CLI or connect your GitHub repository to Vercel
+   - Set the environment variables in Vercel:
+     - `GROQ_API_KEY` - Your Groq API key
+     - `HF_TOKEN` - Your Hugging Face token (if needed)
+   - Note the deployed backend URL
+
+2. **Frontend Deployment**:
+   - Navigate to the `frontend` directory
+   - Update `.env.production` with your actual backend URL
+   - Deploy to Vercel using the Vercel CLI or connect your GitHub repository to Vercel
+   - The frontend will automatically use the backend URL you specified
 
 ## Can I connect a custom domain to my Lovable project?
 

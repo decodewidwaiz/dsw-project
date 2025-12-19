@@ -1,0 +1,40 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["api/**"]
+      }
+    },
+    {
+      "src": "api/ask.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["api/**"]
+      }
+    },
+    {
+      "src": "api/summarize.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["api/**"]
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/api/index.js"
+    },
+    {
+      "src": "/ask",
+      "dest": "/api/ask.js"
+    },
+    {
+      "src": "/summarize",
+      "dest": "/api/summarize.js"
+    }
+  ]
+}
